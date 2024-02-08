@@ -10,7 +10,7 @@ export default function SingUpPage({session, setSessionVar}) {
   const setModel = (value, name) => setInputs({...inputs, [name]: value});
   const env = [ inputs, setModel ];
 
-  useEffect(() => setInputs(session.user), []);
+  useEffect(() => session.user && setInputs(session.user), []);
 
   function summit() {
     if (Object.keys(inputs).length >= 12) {
@@ -27,18 +27,18 @@ export default function SingUpPage({session, setSessionVar}) {
       <Input title='Nombres' id='nombre' formModel={env} />
       <Input title='Apellidos' id='apellido' formModel={env} />
       <Input title='Celular' id='celular' formModel={env} type='telefono' />
-      <Input title='Telefono Residencial' id='tel1' formModel={env} type='telefono' />
-      <Input title='Telefono de Oficina' id='tel2' formModel={env} type='telefono' />
-      <Input title='Correo Electronico' id='correo' formModel={env} />
+      <Input title='Teléfono Residencial' id='tel1' formModel={env} type='telefono' />
+      <Input title='Teléfono de Oficina' id='tel2' formModel={env} type='telefono' />
+      <Input title='Correo Electrónico' id='correo' formModel={env} />
 
       <View style={{height: 2, width: '80%', backgroundColor: 'black', marginVertical: 30}}></View>
     
-      <Selector title='Fuente de Ingreso' id='empleo' setModel={setModel}
-      options={['Empleado Publico', 'Empleado Privado', 'Independiente']} />
-      <Selector title='Tipo de Vivienda' id='casa' setModel={setModel}
+      <Selector title='Fuente de Ingreso' id='empleo' setModel={setModel} default_value={inputs.empleo}
+      options={['Empleado Público', 'Empleado Privado', 'Independiente']} />
+      <Selector title='Tipo de Vivienda' id='casa' setModel={setModel} default_value={inputs.casa}
       options={['Propia', 'Alquilada', 'Comprando con Prestamo', 'Hipotecada', 'Familiar']} />
       <Input title='Lugar de Trabajo' id='trabajo' formModel={env} />
-      <Input title='Posicion Actual' id='posicion' formModel={env} />
+      <Input title='Posición Actual' id='posicion' formModel={env} />
       <Input title='Ingresos Mesuales (RD$)' id='ingresos' formModel={env} type='dinero' />
       <Input title='Años de servicios' id='tiempo' formModel={env} type='numero' />
 

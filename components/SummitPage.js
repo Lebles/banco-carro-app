@@ -11,7 +11,7 @@ export default function SummitPage({setSessionVar}) {
 
   useEffect(() => {
     const ani = Animated.timing(animation, {
-      toValue: 3.1416 * 2,
+      toValue: 1,
       duration: 1000,
       easing: (x) => x,
       useNativeDriver: false
@@ -32,7 +32,9 @@ export default function SummitPage({setSessionVar}) {
   }
 
   return (<View style={{alignItems: 'center', justifyContent: 'center', height: '100%'}}>
-    <Animated.View style={{transform: [{rotateZ: animation}]}}><Semicirculo /></Animated.View>
+    <Animated.View style={{transform: [{
+      rotateZ: animation.interpolate({inputRange: [0,1], outputRange: ['0deg', '360deg']})
+    }]}}><Semicirculo /></Animated.View>
     <Text style={{fontSize: 18, marginTop: 30}}>Enviando formulario</Text>
   </View>);
 }

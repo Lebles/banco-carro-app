@@ -138,11 +138,12 @@ export function Input({title, id, formModel, type, props}) {
   {...props}/></View>);
 }
 
-export function Selector({title, id, setModel, options, props}) {
+export function Selector({title, id, setModel, options, default_value, props}) {
   return(<View style={{width: '70%', marginTop: 3, marginBottom: 20}}>
     <Text style={{color: 'gray', fontSize: 16}}>{title}</Text>
     <SelectDropdown
       data={options}
+      defaultValue={default_value}
       onSelect={(selectedItem, index) => {
         setModel(selectedItem, id);
       }}

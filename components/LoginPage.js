@@ -10,7 +10,7 @@ export default function LoginPage({setSessionVar}) {
       <Button width='48%' style={{opacity: 0, marginTop: '96%', marginLeft: '50%',
       padding: 10}} onPress={() => setSessionVar({stage: 'home'})}/>
       <Button style={{opacity: 0, marginTop: '63.5%', marginLeft: '30%'}}
-      onPress={() => setSessionVar({stage: 'singup'})}/>
+      onPress={() => setSessionVar({stage: 'singup', user: undefined})}/>
     </Modal>
   </View>);
 }

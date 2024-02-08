@@ -31,11 +31,11 @@ export default function UserInputPage({session, setSessionVar}) {
       <Block icon="car" info={session.carro.tipo} iregular={true} />
     </View>
     
-    <Text style={{fontSize: 18, width: '90%', borderRadius: 10, backgroundColor: '#006647', color: '#ffd100', padding: 10, textAlign: 'justify'}}>Complete los datos faltantes para finalizar de hacer su solicitud</Text>
+    <Text style={{fontSize: 18, width: '90%', borderRadius: 10, backgroundColor: '#006647', color: '#ffd100', padding: 10, textAlign: 'justify'}}>Complete los datos faltantes para finalizar de hacer su solicitud.</Text>
     <Input title='Monto solicitado' id='solicita' formModel={env} type='dinero' />
     <Selector title='Plazo de pago' id='plazo' setModel={setModel}
     options={[6,12,24,48,60].map(each => each+' meses')} />
-    <Selector title='Periodo de taza fija' id='periodo' setModel={setModel}
+    <Selector title='Período de taza fija' id='periodo' setModel={setModel}
     options={[6,12,24,48,60].map(each => each+' meses')} />
     
     <View style={{flex: 1}}></View>

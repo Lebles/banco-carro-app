@@ -54,7 +54,7 @@ export default function QRscanner({setSessionVar}) {
           setSessionVar({stage: 'user-input', carro: ts});
           console.log(ts);
         } else {
-          setError("El codigo escaneado no es compatible con esta app");
+          setError("El código escaneado no es compatible con esta app");
         }
         // console.log("Type: "+type+"\nData: "+data);
     }
